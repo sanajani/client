@@ -1,38 +1,330 @@
-.App {
-  text-align: center;
+body{
+    /* overflow-x: hidden; */
+    /* border: 4px solid tomato; */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img{
+    max-width: 100%;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* app component */
+
+
+.nav{
+    background-color: rgb(113, 113, 255);
+    color: white;
+    height: 70px;
+    box-shadow: 0px 3px 5px rgb(81, 81, 255);
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* navbar design */
+.nav .nav_container{
+    display:flex;
+    justify-content: space-between;
+    height: inherit;
+    align-items: center;
+}
+
+
+ .nav .nav_container .right{
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+    height: inherit;
+    margin: 4px 0;
+    align-items: center;
+}
+
+.right a{
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.right a:last-of-type{
+    /* display: none; */
+    margin-right: 25px;
+}
+
+.right a:hover{
+    transform: scale(1.3);
+}
+
+.right .toggle{
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.right .toggle span{
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* header section */
+header{
+    background-color: rgb(113, 113, 255);
+    color: white;
+    height: calc(80% - 70px);
+    padding: 140px 0;
+    /* display: none; */
+}
+
+.header_container{
+    /* border: 2px solid ; */
+    height: 100%;
+}
+
+.header_container h1,p,span{
+    margin: 22px 0;
+}
+
+.header_container p{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.header_container .links{
+
+        display: flex;
+    gap: 35px;
+}
+
+.header_container .links span{
+    /* border: 2px solid yellow; */
+    width: 45px;
+    cursor: pointer;
+    height: 45px;
+    background-color: rgb(128, 128, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.header_container .links span:hover{
+    background-color: rgb(90, 90, 255);
+}
+
+
+/* home page */
+
+.postsContainer{
+    /* height: 200vh; */
+    background-color: rgb(245, 245, 245);
+    padding: 60px 0;
+}
+
+.postContainer:first-child{
+    margin: 40px auto;
+}
+.postContainer{
+    box-shadow: 3px 3px 8px gray, -3px -3px 8px gray;
+    cursor: pointer;
+    padding: 40px 10px;
+    position: relative;
+    margin: 120px auto;
+    /* border: 4px solid ; */
+}
+
+.singlepost{
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    padding: 20px 3px;
+}
+
+
+.postImg{
+    border-radius: 5px;
+}
+.postImg img{
+    height: 100%;
+    border-radius: 5px;
+}
+
+.postInfo{
+    padding: 0 18px;
+    transition: all .3s ease;
+}
+
+.postInfo h1{
+    color: #2b2b2b;
+    transition: all .3s ease;
+}
+
+.postInfo P{
+    text-align: start;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.posterInfo{
+    /* border: 2px solid ; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.posterInfo .right{
+    flex: 3;
+    font-weight: 700;
+    word-spacing: 3px;
+}
+.posterInfo .right span:last-child{
+    margin: 0 30px;
+}
+
+.posterInfo .left{
+    flex: 1;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    /* display: flex; */
+}
+.posterInfo .left span{
+    font-size: 1.3rem;
+    /* display: inline-block; */
+}
+
+.posterInfo .left:hover,.postContainer:hover h1{
+    color: rgb(128, 128, 255);    
+}
+
+.number{
+    position: absolute;
+    top: -23px;
+    right: 0;
+    background-color: rgb(128, 128, 255);    
+
+    width: 100px;
+    height: 100px;
+    border-bottom-left-radius: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.8rem;
+    line-height: 9r;
+    color: white;
+    padding-left: 24px;
+}
+
+
+/* sidebar design */
+
+.side{
+    height: 100vh;
+    width: 0px;
+    overflow: hidden;
+    opacity: 0;
+    background-color: rgb(90, 90, 255);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    font-size: 2rem;
+    transition: all .5s ease;
+}
+.side_links{
+    /* border: 3px solid tomato; */
+    height: calc(100% - 150px);
+    /* position: absolute; */
+    /* bottom: 0; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.side a{
+    margin: 20px 0;
+    color: white;
+    transition: all .5s ease;
+    /* display: block;
+    width: 100%; */
+    /* border: 2px solid gold; */
+}
+.side a:hover{
+    color: #2b2b2b;
+}
+
+.side .toggle{
+    width: 30px;
+    height: 30px;
+    /* border: 2px solid #9dff00; */
+    margin:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.side .toggle span{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    transform-origin:left;
+}
+.side .toggle span:first-child{
+    /* display: none; */
+    transform: rotate(55deg);
+}
+.side .toggle span:nth-child(2){
+    display: none;
+    /* transform: rotate(45deg); */
+}
+.side .toggle span:last-child{
+    /* display: none; */
+    transform: rotate(-55deg);
+}
+
+.side.active{
+    width: 300px;
+    overflow: visible;
+    opacity: 1;
+}
+
+/* footer design */
+footer{
+    background-color: rgb(113, 113, 255);
+    color: white;
+    /* height: calc(100% - 80px); */
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

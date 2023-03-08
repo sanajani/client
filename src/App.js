@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
 
-function App() {
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+// import Header from './components/Header';
+import Home from './components/Home';
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
+import CreatePost from './pages/CreatePost';
+import About from './components/About';
+
+const App = () => {
+  const [sideOpen, setSideOpen] = useState(false)
+  // function for opening and closeing sidebar
+  const sideBar = () => {
+    setSideOpen(!sideOpen)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Navbar sideBar={sideBar} />
+      {/* <Header/> */}
+      {/* <Home/> */}
+      <Sidebar sideOpen={sideOpen} sideBar={sideBar} />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/createpost' element={<CreatePost />} />
+        <Route path='*' element={<h1>Page Not Found</h1>}/>
+      </Routes>
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

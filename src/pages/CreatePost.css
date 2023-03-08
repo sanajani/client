@@ -1,0 +1,11 @@
+.createpost{
+    background-color: brown;
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+}
+
+form{
+    border: 3px solid yellow;
+    display: flex;
+    flex-direction: column;
+}
