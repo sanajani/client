@@ -1,11 +1,29 @@
-.createpost{
-    background-color: brown;
-    margin-top: 70px;
-    height: calc(100vh - 70px);
-}
-
 form{
-    border: 3px solid yellow;
     display: flex;
     flex-direction: column;
+    max-width: 800px;
+    margin: 120px auto;
+}
+
+form .ql-picker-label{
+    margin: 0;
+}
+
+form input{
+    padding: 8px;
+    font-size: 1.3rem;
+    margin:8px 0;
+}
+form input:nth-child(3){
+    padding: 8px 0;
+}
+
+form button{
+    margin: 10px 0;
+    padding: 8px 0;
+    font-size: 1.3rem;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
 }

@@ -1,0 +1,15 @@
+.blogsettupContainer{
+    min-height: 100vh;
+}
+h1,h2{
+    margin: 20px 0;
+}
+textarea{
+    height: 170px;
+    font-size: 1.3rem;
+    padding: 7px 14px;
+}
+
+form input,form textarea{
+    outline: none;
+}

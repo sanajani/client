@@ -1,10 +1,18 @@
 
 import {Link} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import {sidebar} from '../features/sideBarSlicer';
 
-const Sidebar = ({sideOpen,sideBar}) => {
+
+
+const Sidebar = () => {
+
+      const isSide = useSelector((state) => state.isSide.sidebarValue);
+      const dispatch = useDispatch();
+
   return (
-    <div className={sideOpen?'side active':'side'}>
-        <div className="toggle" onClick={() => sideBar()}>
+    <div className={isSide?'side active':'side'}>
+        <div className="toggle" onClick={() => dispatch(sidebar())}>
             <span></span>
             <span></span>
             <span></span>
