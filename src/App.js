@@ -21,6 +21,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { isAdminLogin } from './features/isLogin';
+import ShowSinglePost from './pages/ShowSinglePost';
 
 axios.defaults.withCredentials = true
 
@@ -44,8 +45,8 @@ const App = () => {
         // let data = adminUser.data
         if (adminUser) {
           dispatch(isAdminLogin())
-          let adminData = adminUser.data.admin
-          console.log(adminData);
+          // let adminData = adminUser.data.admin
+          // console.log(adminData);
         }
       } catch (error) {
         console.log(error);
@@ -73,6 +74,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
+        <Route path='/blogpost/:slug' element={<ShowSinglePost />} />
         {
           isAdmin ?
             <>

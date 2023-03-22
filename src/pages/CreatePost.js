@@ -43,15 +43,20 @@ const CreatePost = () => {
       method:"POST",
       body:data
     })
-    const resData = await res.json();
-
-    console.log(resData);
+    await res.json();
+    data.delete('title',title)
+    data.delete('summary',summary);
+    data.delete('content',content);
+    data.delete('file',files[0])
+    setTitle('')
+    setContent('')
+    setSummary('')
   }
 
   return (
     <div className='createpost'>
       <div className="createPostContainer container">
-      <form onSubmit={createNewPost} enctype="multipart/form-data">
+      <form onSubmit={createNewPost} >
         <h1>Create Post</h1>
 {/* title */}
             <input type="text"
@@ -66,7 +71,7 @@ const CreatePost = () => {
 
             {/* file  */}
             <input type="file"
-            name='imgFile'
+            name='file'
             onChange={(e) => setFiles(e.target.files)}
             placeholder='Upload an Image' />
 {/* text area */}
@@ -74,6 +79,7 @@ const CreatePost = () => {
             value={content} 
             modules={modules} 
             formats={formats} 
+            // readOnly={true}
             onChange={setContent} />
 {/* Button */}
             <button>Create Post</button>

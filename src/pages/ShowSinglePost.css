@@ -1,0 +1,38 @@
+body, * {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.singlePostContainer{
+    /* background-color: gray; */
+    max-width: 1150px;
+    /* background-color: red; */
+    margin: 120px auto;
+}
+
+.singlePostContainer h1{
+    margin: 34px 0;
+    /* display: none; */
+    font-weight: 600;
+    /* background-color: red; */
+}
+.singlePostContainer h2{
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.singlePostContainer p{
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgb(20, 20, 20);
+    font-size: 1.2rem;
+
+}
+
+.singlePostContainer .image{
+    background-color: red;
+}
+.singlePostContainer .image img{
+    width: 100%;
+    object-fit: cover;
+    height: 70vh;
+}

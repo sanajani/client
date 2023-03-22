@@ -149,24 +149,25 @@ header{
 .postsContainer{
     /* height: 200vh; */
     background-color: rgb(245, 245, 245);
-    padding: 60px 0;
+    padding: 30px 0;
 }
 
 .postContainer:first-child{
     margin: 40px auto;
+    /* display: none; */
 }
 .postContainer{
     box-shadow: 3px 3px 8px gray, -3px -3px 8px gray;
     cursor: pointer;
     padding: 40px 10px;
     position: relative;
-    margin: 120px auto;
+    margin: 60px auto;
     /* border: 4px solid ; */
 }
 
 .singlepost{
     display: grid;
-    cursor: pointer;
+    /* cursor: pointer; */
     grid-template-columns: 1fr 3fr;
     gap: 20px;
     padding: 20px 3px;
@@ -175,10 +176,14 @@ header{
 
 .postImg{
     border-radius: 5px;
+    height: 250px;
+    width: 100%;
+    object-fit: contain;
 }
 .postImg img{
     height: 100%;
     border-radius: 5px;
+    object-fit: contain;
 }
 
 .postInfo{
